@@ -25,3 +25,8 @@ def create(request):
     post.pub_date = timezone.datetime.now()
     post.save()
     return redirect('/post/' + str(post.id))
+
+def delete(request, post_id):
+    review = get_object_or_404(Post, id=post_id)
+    review.delete()
+    return redirect('/')
