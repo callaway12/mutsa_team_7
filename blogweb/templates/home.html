@@ -34,8 +34,9 @@
               <h3 class="masthead-brand">TaeWan Dev</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="{%url 'home'%}">Home</a></li>
                   <li><a href="{%url 'post'%}">Posts</a></li>
+                  <li class=""><a href="{%url 'home'%}">About</a></li>
+
                 </ul>
               </nav>
             </div>
@@ -49,9 +50,11 @@
             </p>
           </div>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">TW Dev</a><br>, by <a href="https://www.instagram.com/loadstorestock/">@loadstorestock</a>.</p>
+          <div class="mastfoot navbar-fixed-bottom tw_footer">
+            <div class="container">
+              <div class="inner">
+                <p>Cover template for <a href="http://getbootstrap.com">TW Dev</a><br>, by <a href="https://www.instagram.com/loadstorestock/">@loadstorestock</a>.</p>
+              </div>
             </div>
           </div>
 
@@ -75,6 +78,9 @@
  */
 
 /* Links */
+.tw_footer{
+  width: 100% !important;
+}
 a,
 a:focus,
 a:hover {
