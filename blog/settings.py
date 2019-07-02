@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blogweb',
+    'storages',
+    
 ]
 
 MIDDLEWARE = [
@@ -118,7 +120,8 @@ TIME_ZONE = 'Asia/Seoul'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'blogweb', 'static')
+    # os.path.join(BASE_DIR, 'blogweb', 'static')
+    STATIC_DIR,
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
@@ -127,3 +130,9 @@ STATIC_URL = '/static/'
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = 'AKIAJGQOXU2QXRI6P2OQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'mutsa7-test'
